@@ -53,7 +53,7 @@ function App() {
       />
       {pais == null || pais == ' ' ?
         (
-          <h1>Clique no botão para começar...</h1>
+          <h1>Busque informações sobre um determinado país de maneira rápida...</h1>
         ) : (
           <CampoBandeira
             nomePais={pais.nome}
