@@ -11,8 +11,6 @@ const CampoTexto = (props) => {
 
         props.aoAlterar(evento.target.value)
 
-        console.log(evento.target.value)
-
     }
 
 

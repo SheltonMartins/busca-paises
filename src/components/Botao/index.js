@@ -1,9 +1,16 @@
 import './Botao.css'
 
 const Botao = (props) => {
+
+    const aoClicar = (evento) => {
+
+        props.processarBusca()
+
+    }
+
     return (
         <div >
-            <button className="Botao" >{props.titulo}</button>
+            <button onClick={aoClicar} className="Botao" >{props.titulo}</button>
         </div>
     )
 }
