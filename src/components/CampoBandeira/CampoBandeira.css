@@ -1,0 +1,29 @@
+.campoBandeira {
+   
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #fff;
+    margin: 10px;
+    max-width: 300px;
+    margin: auto auto;
+}
+
+.campoBandeira h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.campoBandeira img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.campoBandeira label {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+}

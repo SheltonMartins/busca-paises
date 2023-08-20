@@ -1,40 +1,49 @@
 import './App.css';
 import buscaAPI from './api/api.js';
 import Botao from './components/Botao';
+import CampoBandeira from './components/CampoBandeira';
 import CampoTexto from './components/CampoTexto';
 import { useState } from 'react'
-import Pais from './models/Pais';
+
 
 
 function App() {
 
   const [valor, setValor] = useState(' ')
 
+  const [pais, setPais] = useState(null)
+
   const processarBusca = async () => {
 
     const paisBuscado = await buscaAPI(valor)
 
-    console.log(paisBuscado[0])
+    if (paisBuscado == null) {
 
-    const nome = paisBuscado[0].name.common
+      setPais(null)
 
-    const capital = paisBuscado[0].capital[0]
+      alert('Não encontramos pelo nome digitado. Tente novamente.')
 
-    const pais = new Pais(nome, capital)
+    } else {
 
-    console.log(pais._nome, pais._capital)
+      const linguaTraduzida = Object.values(paisBuscado.lingua)[0]
+
+      paisBuscado.lingua = linguaTraduzida
+
+      setPais(paisBuscado)
 
 
 
-  
+    }
+
 
   }
 
   return (
+
     <div className="App">
       <CampoTexto
         placeholder="Digite o nome do país..."
-        titulo="Busca: "
+        titulo="País: "
         valor={valor}
         aoAlterar={valor => setValor(valor)}
       />
@@ -42,7 +51,21 @@ function App() {
         titulo="Buscar"
         processarBusca={processarBusca}
       />
+      {pais == null || pais == ' ' ?
+        (
+          <h1>Clique no botão para começar...</h1>
+        ) : (
+          <CampoBandeira
+            nomePais={pais.nome}
+            bandeiraPais={pais.bandeira}
+            capitalPais={pais.capital}
+            populacaoPais={pais.populacao}
+            linguaPais={pais.lingua}
+          />
+        )}
+
     </div>
+
   );
 }
 

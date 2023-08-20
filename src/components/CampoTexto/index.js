@@ -21,6 +21,7 @@ const CampoTexto = (props) => {
                 placeholder={props.placeholder}
                 onChange={aoDigitar}
                 value={props.valor}
+
             />
         </div>
     )

@@ -9,9 +9,8 @@ const Botao = (props) => {
     }
 
     return (
-        <div >
-            <button onClick={aoClicar} className="Botao" >{props.titulo}</button>
-        </div>
+            <button onClick={aoClicar} className="Botao" >{props.titulo} </button>
+      
     )
 }
 
