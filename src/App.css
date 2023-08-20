@@ -1,21 +1,16 @@
 .App {
   text-align: center;
   background-color: #f0f0f0;
-  align-items: center;
-  height: 100vh;
-  padding: 30px 150px 0px 150px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  padding: 30px;
+  height: 100%;
 }
 
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  /* Estilo para telas maiores, por exemplo, tablets e desktops */
+  .App {
+    padding: 30px 150px;
   }
 }
 
@@ -42,6 +37,4 @@
   to {
     transform: rotate(360deg);
   }
-
-
 }
